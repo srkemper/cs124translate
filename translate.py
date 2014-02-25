@@ -4,6 +4,9 @@ import sys
 import getopt
 import os
 import math
+import nltk
+from nltk.corpus import cess_esp
+from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTagger
 
 def loadList(file_name):
     """Loads text files as lists of lines. Used in evaluation."""
@@ -12,7 +15,14 @@ def loadList(file_name):
     return l
 
 def main():
-	
+	tagged_corpus = cess_esp.tagged_sents()
+	size = int(len(tagged_corpus) * .9)
+	training = tagged_corpus[:size]
+	print "training HiddenMarkovModelTagger"
+	hmm_tagger = HiddenMarkovModelTagger.train(training)
+	print "finished training"
+
+
 	dict_file = "./data/dictionary.txt"
 	sentences_file = "./data/corpus.txt"
 	dictionary_lists = loadList(dict_file)
@@ -26,28 +36,32 @@ def main():
 		translations = []
 		for idx, word in enumerate(entry_list):
 			if idx== 0: 
-				key = word
+				key = word.lower()
 			else:
 				translations.append(word)
 		dictionary[key]=translations
 	#print dictionary
 
+	tagged_sentences = []
 	for idx, sentence in enumerate(sentences_lists):
+		tagged_sentences.append(hmm_tagger.tag(sentence.split()))
 		print("")
 		print("Sentence ",idx)
 		sentence_list = sentence.split()
+		print sentence_list
 		translation_list = []
 		for word in sentence_list:
-			print(word)
+			# print(word)
 			word = word.replace('.','')
 			word = word.replace(',','')
 			
 			word = word.lower()
-			print(word)
+			# print(word)
 			trans = dictionary.get(word)
-
+			print(trans[0])
 			translation_list.append(trans[0])
 		print translation_list
+	print tagged_sentences
 
 
 
