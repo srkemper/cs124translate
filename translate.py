@@ -5,38 +5,39 @@ import os
 import math
 import nltk
 from nltk.corpus import cess_esp
+from nltk.corpus import brown
 from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTagger
 
-def noun_of_the_noun_switch(translation_list):
-	switch = 1
-	while switch!=0:
-		for idx, word in enumerate(translation_list):
-			firstN =""
-			fi = -1
-			of = False
-			oi = -1
-			the = False
-			ti = -1
-			secondN = ""
-			si = -1
-			if "/N" in word or "/NP" in word and fi==-1:
-				firstN=word
-				fi=idx
-			if word == "of/PREP" and fi!=-1:
-				of = True
-				oi=idx
-			if word == "of_the/PREP" and fi!=-1:
-				of = True
-				oi=idx
-				ti=idx
-				the = True
-			if fi!=-1 and (word!="of/PREP" or word!="of_the/PREP"):
-				firstN=""
-				fi=-1
-			if fi!=-1 and oi!=-1 and word=="the/PREP":
-				ti=idx
-				the=True
-			if "/N" in word or "/NP" in word and fi==-1:
+# def noun_of_the_noun_switch(translation_list):
+# 	switch = 1
+# 	while switch!=0:
+# 		for idx, word in enumerate(translation_list):
+# 			firstN =""
+# 			fi = -1
+# 			of = False
+# 			oi = -1
+# 			the = False
+# 			ti = -1
+# 			secondN = ""
+# 			si = -1
+# 			if "/N" in word or "/NP" in word and fi==-1:
+# 				firstN=word
+# 				fi=idx
+# 			if word == "of/PREP" and fi!=-1:
+# 				of = True
+# 				oi=idx
+# 			if word == "of_the/PREP" and fi!=-1:
+# 				of = True
+# 				oi=idx
+# 				ti=idx
+# 				the = True
+# 			if fi!=-1 and (word!="of/PREP" or word!="of_the/PREP"):
+# 				firstN=""
+# 				fi=-1
+# 			if fi!=-1 and oi!=-1 and word=="the/PREP":
+# 				ti=idx
+# 				the=True
+# 			if "/N" in word or "/NP" in word and fi==-1:
 
 
 
@@ -95,20 +96,28 @@ def main():
 			word = word.replace('-','')
 			word = word.lower()
 
-			print(word)
+			# print(word)
 			if word!='':
 				trans = dictionary.get(word)
 				translation_list.append(trans[0])
 			
-			translation_list = noun_of_the_noun_switch(translation_list)
+			# translation_list = noun_of_the_noun_switch(translation_list)
 			
-			translation_list= noun_adjective_switch(translation_list)
+			# translation_list= noun_adjective_switch(translation_list)
 
 		print(translation_list)
-		
-	print tagged_sentences
+	
+	tagged_sents = []	
+	for tagged_sentence in tagged_sentences:
+		ts = []
+		for pair in tagged_sentence:
+			ts.append("/".join(pair))
+		tagged_sents.append(" ".join(ts))
 
 
+	for sent in tagged_sents:
+		print ""
+		print sent
 
 
 
