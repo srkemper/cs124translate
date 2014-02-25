@@ -1,4 +1,3 @@
-
 import itertools as it
 import sys
 import getopt
@@ -66,8 +65,11 @@ def main():
 	#print dictionary
 
 	for idx, sentence in enumerate(sentences_lists):
+		if sentence == "": continue
 		print("")
+
 		print("Sentence ",idx+1)
+
 		sentence_list = sentence.split()
 		translation_list = []
 		for word in sentence_list:
@@ -79,6 +81,7 @@ def main():
 			word = word.replace(')','')
 			word = word.replace('-','')
 			word = word.lower()
+
 			print(word)
 			if word!='':
 				trans = dictionary.get(word)
@@ -89,6 +92,7 @@ def main():
 			translation_list= noun_adjective_switch(translation_list)
 
 		print(translation_list)
+
 
 
 
