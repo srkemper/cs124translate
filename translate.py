@@ -3,6 +3,9 @@ import sys
 import getopt
 import os
 import math
+import nltk
+from nltk.corpus import cess_esp
+from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTagger
 
 def noun_of_the_noun_switch(translation_list):
 	switch = 1
@@ -44,7 +47,14 @@ def loadList(file_name):
     return l
 
 def main():
-	
+	tagged_corpus = cess_esp.tagged_sents()
+	size = int(len(tagged_corpus) * .9)
+	training = tagged_corpus[:size]
+	print "training HiddenMarkovModelTagger"
+	hmm_tagger = HiddenMarkovModelTagger.train(training)
+	print "finished training"
+
+
 	dict_file = "./data/dictionary.txt"
 	sentences_file = "./data/corpus.txt"
 	dictionary_lists = loadList(dict_file)
@@ -64,16 +74,19 @@ def main():
 		dictionary[key]=translations
 	#print dictionary
 
+	tagged_sentences = []
 	for idx, sentence in enumerate(sentences_lists):
 		if sentence == "": continue
+		tagged_sentences.append(hmm_tagger.tag(sentence.split()))
 		print("")
 
 		print("Sentence ",idx+1)
 
 		sentence_list = sentence.split()
+		print sentence_list
 		translation_list = []
 		for word in sentence_list:
-			#print(word)
+			# print(word)
 			word = word.replace('.','')
 			word = word.replace(',','')
 			word = word.replace(':','')
@@ -92,7 +105,8 @@ def main():
 			translation_list= noun_adjective_switch(translation_list)
 
 		print(translation_list)
-
+		
+	print tagged_sentences
 
 
 
