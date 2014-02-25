@@ -1,4 +1,3 @@
-
 import itertools as it
 import sys
 import getopt
@@ -33,19 +32,21 @@ def main():
 	#print dictionary
 
 	for idx, sentence in enumerate(sentences_lists):
+		if sentence == "": continue
 		print("")
 		print("Sentence ",idx)
+		print sentence
 		sentence_list = sentence.split()
 		translation_list = []
 		for word in sentence_list:
-			print(word)
+			#print(word)
 			word = word.replace('.','')
 			word = word.replace(',','')
 			
 			word = word.lower()
-			print(word)
+			#print(word)
 			trans = dictionary.get(word)
-
+			print trans
 			translation_list.append(trans[0])
 		print translation_list
 
