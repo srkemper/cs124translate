@@ -1,112 +1,276 @@
+Conferencia Conference/N Conferences/NP Lecture/N Lectures/NP
+EEP EEP/PN
+Europa Europe/PN
 Faustino Faustino/PN
+Japón Japan/PN
 Manhattan Manhattan/PN
+Parlamento Parliament/PN parliament/N
 Saralegui Saralegui/PN
+Tymoshenko Tymoshenko/PN
+Yanukovych Yanukovych/PN
+Yulia Yulia/PN
 a to/PREP at/PREP
+afianzar secure/V1 secures/V3 secured/VP will_secure/VE fasten/V1 fastens/V3 fastened/VP will_fasten/VF
+agosto august/PN
+agua water/N aqua/N waters/NP aquas/NP
 ajenos outside/ADJ alien/ADJ
 al to_the/PREP at_the/PREP
 alguna any/PRO
+alternativas alternative/N alternatives/NP
+amarilla yellow/ADJ buff/ADJ
+ambientales environmental/ADJ
 amiga female_friend/N female_friends/NP lady/N ladies/NP
+amoroso amorous/ADJ loving/ADJ 
 andén platform/N platforms/NP
+animales animals/NP beasts/NP animal/N beast/N
 anotaban scoring/N write_down/V1 writes_down/V3 wrote_down/VP will_write_down/VF annotate/V1 annotates/V3 anotated/VP will_annotate/VF
 aquel that/ADJ
 arrastraba dragged/VP drag/V1 drags/V3 will_drag/VF haul/V1 hauls/V3 hauled/VP will_haul/VF
+ascua ember/N embers/NP tenterhook/N tenterhooks/NP
 automóvil car/N cars/NP automobile/N automobiles/NP
 avances advances/NP advance/N progress/N progresses/NP
 bautizado baptized/ADJ
+bebidas drink/N beverage/N drinks/NP beverages/NP
+bomba pump/N pumps/NP bomb/N bombs/NP
 buscar search/V1 searches/V3 searched/VP will_search/VF
 cada each/ADJ every/ADJ each/PRO every/PRO
 calles streets/NP street/N road/N roads/NP
+capítulos chapters/NP chapter/N episodes/NP episode/N
 cargado loaded/ADJ laden/ADJ charged/N
 casa home/N homes/NP house/N houses/NP
 católica Catholic/ADJ Catholic/N Catholics/NP Romanist/N Romanists/NP Romish/ADJ
+cautiverio captivity/N bondage/N
+chimenea hearth/N hearths/NP smokestack/N smokestacks/NP
+chispa spark/N sparks/NP glint/N glints/NP
+ciudad city/N cities/NP
+como as/ADV like/ADV as/CONJ as/PREP like/PREP eat/V1 eats/V3 ate/VP will_eat/VF
+comunes common/ADJ mutual/ADJ
 comunicaba communicated/VP will_communicate/VF communicate/V1 communicates/V3 report/V1 reports/V3 reported/VP will_report/VF
+comunicada statement/N statements/NP announcement/N announcements/NP connected/ADJ inform/V1 informs/V3 informed/VP will_inform/VF notify/V1 notifies/V3 notified/VP will_notify
 con with/PREP by/PREP
+condenas convictions/NP conviction/N
+consumidores consumer/N user/N consumers/NP users/NP
 contempla contemplates/V3 contemplate/V1 contemplated/VP will_contemplate/VF watch/V1 watches/V3 watched/VP will_watch/VF
+contribuir contribute/V1 contributes/V3 contributed/VP will_contribute/VF
+convirtieron convert/V1 turn/V1 converts/V3 turns/V3 became/VP converted/VP will_convert/VF will_become/VF
 creía believed/VP will_believe_VF believe/V1 believes/V3 think/V1 thinks/V3 thought/VP will_think/VF
+creó created/VP create/V1 createsV3 will_create/VF make/V1 makesV3 made/VP will_make
+crianza breeding/N upbringing/N breedings/NP upbringings/NP
+cultural cultural/ADJ cultured/ADJ
+cárcel jail/N jails/NP prison/N prisons/NP
+círculo circle/N circles/NP round/N
 da give/V1 gives/V3 gave/VP will_give/VF yield/V1 yield/V3 yielded/VP will_yield/VF
-de of/PREP from/PREP
+de of/PREP from/PREP than/CONJ off/ADV
+debe should/V1 should/V1 should_have/VP debit/N
 deberías should/V1 should_have/VP must/V1
+del of_the/PREP of/PREP
+descartan discarded/VP will_discard/VF discards/V3 discard/V1 will_put_away/VF put_away/V1 puts_away/V3 put_away/VP
 desde from/PREP since/PREP
 desnuda nude/ADJ naked/ADJ
+disminuyeron decrease/V1 diminish/V1 decreases/V3 diminshes/V3 decreased/VP diminished/VP will_decrease/VF will_diminish/VF
+diversos various/PRO various/ADJ
+dividido divided/ADJ split/ADJ 
+doctor doctor/N doctors/NP doc/N docs/NP
+donde where/ADV wherein/ADV where/CONJ
+ejecuciones executions/NP execution/N performances/NP performance/N
+ejerció exercise/V1 exercised/VP exercises/V3 will_exercise practice/V1 practices/V3 practiced/VP will_practice/VF
 el the/ART
+elecciones election/N elections/NP vote/N votes/NP
+elementos elements/NP element/N
 ellos they/PRO them/PRO
 en in/PREP on/PREP
+encuentran find/V1 finds/V3 found/VP will_find/VF encounter/V1 encounters/V3 encountered/VP will_encounter/VF
+enfermedades diseases/NP disease/N illnesses/NP illness/N
 enorme huge/ADJ enormous/ADJ
 entonces then/ADV now/ADV
+entre between/PREP among/PREP in_between/ADV
 esperar wait/V1 waits/V3 waited/VP will_wait/VF
+esta this/ADJ this_one/PRO
+estaban is/V3 am/V1 are/V2 are/V3 was/VP were/VP will/VF stay/V1 stays/V3 will_stay/VF stayed/VP
 estados states/NP state/N status/N statuses/NP
+está is/V3 am/V1 are/V2 are/V3 was/VP were/VP will/VF this/ADJ this_one/PRO stay/V1 stays/V3 will_stay/VF stayed/VP
+eventos events/NP event/N
+excluidos excluded/VP exclude/V1 excludes/V3 will_exclude/VF rule_out/V1 rules_out/V3 ruled_out/VP will_rule_out/VF
+existente existing/ADJ existent/ADJ 
+exitosa successful/ADJ
+extensos extensive/ADJ wide/ADJ 
+factores factors/NP factor/N agent/N agents/NP
+favor favor/N behalf/N favors/NP
 fe faith/N faiths/NP belief/N beliefs/NP
 fijaste set/V1 sets/V3 will_set/VF set/VP
 fijo fixed/ADJ hard/ADJ
+finitos finite/ADJ
 frente front/N fronts/NP face/N faces/NP
+frutas fruit/N fruits/NP
 frías cold/ADJ cool/ADJ
+fue is/V3 am/V1 are/V2 are/V3 was/VP were/VP will/VF go/V1 goes/V3 went/VP will_go/VF
+fueron is/V3 am/V1 are/V2 are/V3 was/VP were/VP will/VF go/V1 goes/V3 went/VP will_go/VF
+futuro future/ADJ succeeding/ADJ future/N futures/N hereafter/N
+general general/ADJ general/N
+genes genes/NP gene/N
+genética genetics/N
+gran great/ADJ large/ADJ
+grifo tap/N faucet/N taps/NP faucets/NP drunk/ADJ curly/ADJ
 gritando screaming/V1 scream/V1 screams/V3 screamed/VP will_scream/VF yell/V1 yells/V3 yelled/VP will_yell/VF
+habitaciones rooms/NP habitations/NP room/N habitation/N
 había had/VP will_have/VF have/V1 has/V3
+hay there_are/V3 there_is/V1
+hipótesis hypothesis/N hypotheses/NP supposition/N suppositions/NP
+hispanoamericana hispanic/ADJ
 hombre man/N men/NP husband/N husbands/NP
 hora time/N times/NP hour/N hours/NP
+horas hours/NP hour/N
+hotel hotel/N guesthouse/N hotels/NP guesthouses/NP
 hoy today/ADV today/N
 hubo were/VP 
 imaginarte imagine/V1 imagines/V3 imagined/VP will_imagine/VF
+imcompletas incomplete/ADJ sketchy/ADJ
 importantes important/ADJ significant/ADJ
 incapaz unable/ADJ incapable/ADJ
+incendio fire/N fires/NP burning/N burnings/NP  
+incertidumbre uncertainty/N doubt/N uncertainties/NP doubts/NP
 incomprensibles incomprehensible/ADJ inapprehensible/ADJ
+información information/N data/N
+inspecciones inspections/NP inspection/N survey/N surveys/NP
+intelectual intellectual/ADJ highbrow/N egghead/N egghead/NP 
+junto together/ADJ together/ADV
 la the/ART her/PRO it/PRO
+lamentablemente regrettably/ADV lamentably/ADV
+lanzada launched/ADJ launched/N
+largas long/ADJ lengthy/ADJ
 largo long/ADJ lengthy/ADJ length/N lengths/NP
-las the/ART them/PRO
+las the/ART them/ART them/PRO
+le you/PRO him/PRO 
 les them/PRO
+liberación release/N liberation/N
+libro book/N books/NP
 llegar get/V1 gets/V3 reach/V1 reaches/V3 got/VP will_get/VF reached/VP will_reach/VF
 llegase reached/VP will_reach/VF reach/V1 reaches/V3 get/V1 gets/V3 got/VP will_get/VF
 lo it/PRO him/PRO the/ART
 los the/ART them/PRO
+lugar place/N places/NP space/N spaces/NP
 maleta suitcase/N suitcases/NP case/N cases/NP ham-fisted/ADJ
 marcha march/N marches/NP running/N runnings/NP
+mayo May/PN
+mayoría most/N majority/N
 mañana morning/ADJ morning/N mornings/NP tomorrow/ADV
 mientras while/CONJ as/CONJ as/ADV meanwhile/ADV
 mis my/ADJ
 momento time/N times/NP moment/N moments/NP
+motivo reason/N reasons/NP cause/N couses/NP
+muchachito boy/N boys/NP
+muchos many/ADJ numerous/ADJ many/N many/PRO much/ADV
+mundialmente globally/ADV worldwide/ADV
+más more/ADJ most/ADJ more/ADV more/ADV more/N plus/N
+múltiples multiple/ADJ manifold/ADJ
 nacer be_born/V1 was_born/VP will_be_born/VF rise/V1 rises/V3 rose/VP will_rise/VF
+nación nation/N nations/NP
 nada nothing/PRO any/PRO nothingness/N naught/N not_at_all/ADV not_any_the/ADV
+narrativa narative/N naratives/NP
+naturaleza nature/N character/N characters/NP
+no no/PART not/PART
 nombre name/N names/NP forename/N forenames/NP
+noticia news/N news_item/N news_items/NP 
+novela novel/N novels/NP story/N storys/NP
+nuestros our/PRO ours/PRO
+nueva new/ADJ fresh/ADJ novel/ADJ 
+nuevas new/ADJ news/N
+o or/CONJ  either/CONJ
 observaciones observation/N observations/NP remark/N remarks/NP
+obtenidas obtained/ADJ
+oculares ocular/N ocular/NP ocular/ADJ
 ojos eyes/NP eye/N peeper/N peepers/NP
 olvidar forget/V1 forgets/V3 forgot/VP will_forget/VF neglect/V1 neglects/V3 neglected/VP will_neglect/VF
+otras other/ADJ another/ADJ
+otros others/PRO
 palabras words/NP word/N speech/N speeches/NP
 para for/PREP to/PREP in_order_to/CONJ so_as_to/CONJ
 parque park/N parks/NP fleet/N fleets/NP
 pequeño small/ADJ little/ADJ
-pero but/CONJ only/CONJ but/N 
+pero but/CONJ only/CONJ but/PREP only/PREP but/N 
+personajes character/N characters/NP personage/N personages/NP
+personas people/NP person/N
 poco little/ADJ short/ADJ little/ADV few/ADV little/N bit/n bits/NP
+podía could/VP can/V1 can/V3 will_be_able_to/VF 
+política policy/N policies/NP politics/NP politic/N
 por by/PREP for/PREP
+posguerra postwar_period/N
+posición position/N positions/NP status/N
+practicadas practiced/ADJ
+presidente president/N presidents/NP chairman/N chairmen/NP
 primera first/N bottom_gear/N
+primeras first/ADJ foremost/ADJ
+principales main/ADj principal/ADJ
+priorizar prioritize/V1 prioritizes/V3 prioritized/VP will_prioritize/VF
+produjera produced/VP produce/V1 produces/V3 will_produce/VF will_bring_about/VF brings_about/V3 bring_about/V1 brought_about/VP
+programación programming/N
+pronto soon/ADV before_long/ADV early/ADJ prompt/ADJ
+proyectado projected/VP project/V1 projects/V3 will_project/VF throw/V1 throws/V3 threw/VP will_throw/VF
+prueba test/N tests/NP exam/N exams/NP
 puedo be_able_to/V1 can/V1 can/V3 were_able_to/VP was_able_to/VP could/VF will_be_able_to/VF
 puesta putting/N setting/N
-que that/CONJ than/CONJ what/ADJ what/PRO that/PRO
+que that/PRO what/PRO that/CONJ then/CONJ than/CONJ what/ADJ 
 quedado I_stayed/V1 left/ADJ lost/ADJ
+quejas complaints/NP grievances/NP complaint/N grievance/N
+quién who/PRO whom/PRO
+rasgos features/NP feature/N traits/NP trait/N
 recorre walk/V1 walks/V3 walked/VP will_walk/VF travel/V1 travels/V3 traveled/VP will_travel/VF
+recurren appeal/V1 draw_on/V1 appeals/V3 draws_on/V3 appealed/VP drew_on/VP will_appeal/VF will_draw_on/VF
+recursos resource/N sinew/N resources/NP means/NP
+refrescos refreshment/N refresher/N refreshments/NP refreshers/NP
+relatan relates/V3 related/VP will_relate/VF relate/V tell/V1 tells/V3 told/VP will_tell/VF
+represión repression/N suppression/N
+rescoldo embers/NP ember/N
 restaurante restaurant/N restaurants/NP eatery/N eateries/NP
+resultado result/N outcome/N results/NP outcomes/NP
+rival rival/N rivals/NP foe/N foes/NP rival/ADJ
 roja red/ADJ ruddy/ADJ
 rumbo course/N courses/NP direction/N directions/NP
+rápidamente quickly/ADV rapidly/ADV
+salida output/N outputs/NP exit/N exits/NP
 salir leave/V1 leaves/V3 left/VP will_leave/VF go_out/V1 goes_out/V3 went_out/VP will_go_out/VF
+salud health/N
+saludables healthy/ADJ wholesome/ADJ
+se self/PRO oneself/PRO
 seguridad security/N securities/NP safety/N safeties/NP
+seis six/ADJ sixth/N six/N
+servir serve/V1 serves/V3 served/VP will_serve/VF attend/V1 attends/V3 attended/VP will_attend/VF
 señalaba note/V1 notes/V3 noted/VP will_note/VF mark/V1 marks/V3 marked/VP will_mark/VF
 sin without/PREP out_of/PREP except/ADV
 sobre about/PREP on/PREP envelope/N envolopes/NP packet/N packets/NP
+sobre about/PREP on/PREP envelope/N packet/N envelopes/NP packets/NP
+social social/ADJ convivial/ADJ
+sociedad society/N societies/NP partnership/N partnerships/NP
 sol sun/N suns/NP sunshine/N sunshines/NP
-sólo only/ADV alone/ADV
+son am/V1 are/V2 is/V3 are/V3 was/VP were/VP will_be/VF
 su your/PRO its/PRO his/ADJ
 sus their/PRO its/PRO his/ADJ
 sé know/V1 knows/V3 knew/VP will_know/VF
+sólo only/ADV alone/ADV unique/ADJ by_oneself/PRO 
+tanto so/ADV how/ADV such/ADJ point/N points/NP score/N scores/NP
 taxi taxi/N taxis/NP cab/N cab/NP
 te you/PRO thee/PRO
+tendría have/V1 has/V3 had/VP will_have/VF
 tipo type/N types/NP kind/N kinds/NP
+tras after/PREP behind/PREP backside/N backsides/NP
 trenes trains/NP train/N
+tres three/N thee/ADJ
 tu your/PRO thy/ADJ
 un a/ART an/ART one/ADJ
 una a/ART an/ART one/ADJ
+uranio uranium/N
+urgencia urgency/N emergency/N emergencies/NP
 vagando drifting/N wander/V1 wanders/V3
+valoraciones rating/N raitings/NP assessment/N assessments/NP
+vencidos defeated beaten losing overdue
 ventana window/N windows/NP deadlight/N deadlights/NP
+ventas sale/N disposal/N sales/NP disposals/NP
 vez time/N times/NP turn/N turns/NP
-vieja old_woman/N old_women/NP old_lady/N old_ladies/NP
+vida life/N lives/NP living/N
+vieja old/ADJ aged/ADJ old_woman/N old_lady/N old_women/NP old_ladies/NP
+voto vote/N votes/NP vow/N vows/NP
 y and/CONJ
 yo I/PRO self/N
+ámbitos areas/NP area/N scope/N scopes/NP
 ánimo encouragement/N encouragments/NP mind/N minds/NP
+últimas last/ADJ latest/ADJ
