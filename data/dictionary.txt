@@ -1,0 +1,112 @@
+Faustino Faustino/PN
+Manhattan Manhattan/PN
+Saralegui Saralegui/PN
+a to/PREP at/PREP
+ajenos outside/ADJ alien/ADJ
+al to_the/PREP at_the/PREP
+alguna any/PRO
+amiga female_friend/N female_friends/NP lady/N ladies/NP
+andén platform/N platforms/NP
+anotaban scoring/N write_down/V1 writes_down/V3 wrote_down/VP will_write_down/VF annotate/V1 annotates/V3 anotated/VP will_annotate/VF
+aquel that/ADJ
+arrastraba dragged/VP drag/V1 drags/V3 will_drag/VF haul/V1 hauls/V3 hauled/VP will_haul/VF
+automóvil car/N cars/NP automobile/N automobiles/NP
+avances advances/NP advance/N progress/N progresses/NP
+bautizado baptized/ADJ
+buscar search/V1 searches/V3 searched/VP will_search/VF
+cada each/ADJ every/ADJ each/PRO every/PRO
+calles streets/NP street/N road/N roads/NP
+cargado loaded/ADJ laden/ADJ charged/N
+casa home/N homes/NP house/N houses/NP
+católica Catholic/ADJ Catholic/N Catholics/NP Romanist/N Romanists/NP Romish/ADJ
+comunicaba communicated/VP will_communicate/VF communicate/V1 communicates/V3 report/V1 reports/V3 reported/VP will_report/VF
+con with/PREP by/PREP
+contempla contemplates/V3 contemplate/V1 contemplated/VP will_contemplate/VF watch/V1 watches/V3 watched/VP will_watch/VF
+creía believed/VP will_believe_VF believe/V1 believes/V3 think/V1 thinks/V3 thought/VP will_think/VF
+da give/V1 gives/V3 gave/VP will_give/VF yield/V1 yield/V3 yielded/VP will_yield/VF
+de of/PREP from/PREP
+deberías should/V1 should_have/VP must/V1
+desde from/PREP since/PREP
+desnuda nude/ADJ naked/ADJ
+el the/ART
+ellos they/PRO them/PRO
+en in/PREP on/PREP
+enorme huge/ADJ enormous/ADJ
+entonces then/ADV now/ADV
+esperar wait/V1 waits/V3 waited/VP will_wait/VF
+estados states/NP state/N status/N statuses/NP
+fe faith/N faiths/NP belief/N beliefs/NP
+fijaste set/V1 sets/V3 will_set/VF set/VP
+fijo fixed/ADJ hard/ADJ
+frente front/N fronts/NP face/N faces/NP
+frías cold/ADJ cool/ADJ
+gritando screaming/V1 scream/V1 screams/V3 screamed/VP will_scream/VF yell/V1 yells/V3 yelled/VP will_yell/VF
+había had/VP will_have/VF have/V1 has/V3
+hombre man/N men/NP husband/N husbands/NP
+hora time/N times/NP hour/N hours/NP
+hoy today/ADV today/N
+hubo were/VP 
+imaginarte imagine/V1 imagines/V3 imagined/VP will_imagine/VF
+importantes important/ADJ significant/ADJ
+incapaz unable/ADJ incapable/ADJ
+incomprensibles incomprehensible/ADJ inapprehensible/ADJ
+la the/ART her/PRO it/PRO
+largo long/ADJ lengthy/ADJ length/N lengths/NP
+las the/ART them/PRO
+les them/PRO
+llegar get/V1 gets/V3 reach/V1 reaches/V3 got/VP will_get/VF reached/VP will_reach/VF
+llegase reached/VP will_reach/VF reach/V1 reaches/V3 get/V1 gets/V3 got/VP will_get/VF
+lo it/PRO him/PRO the/ART
+los the/ART them/PRO
+maleta suitcase/N suitcases/NP case/N cases/NP ham-fisted/ADJ
+marcha march/N marches/NP running/N runnings/NP
+mañana morning/ADJ morning/N mornings/NP tomorrow/ADV
+mientras while/CONJ as/CONJ as/ADV meanwhile/ADV
+mis my/ADJ
+momento time/N times/NP moment/N moments/NP
+nacer be_born/V1 was_born/VP will_be_born/VF rise/V1 rises/V3 rose/VP will_rise/VF
+nada nothing/PRO any/PRO nothingness/N naught/N not_at_all/ADV not_any_the/ADV
+nombre name/N names/NP forename/N forenames/NP
+observaciones observation/N observations/NP remark/N remarks/NP
+ojos eyes/NP eye/N peeper/N peepers/NP
+olvidar forget/V1 forgets/V3 forgot/VP will_forget/VF neglect/V1 neglects/V3 neglected/VP will_neglect/VF
+palabras words/NP word/N speech/N speeches/NP
+para for/PREP to/PREP in_order_to/CONJ so_as_to/CONJ
+parque park/N parks/NP fleet/N fleets/NP
+pequeño small/ADJ little/ADJ
+pero but/CONJ only/CONJ but/N 
+poco little/ADJ short/ADJ little/ADV few/ADV little/N bit/n bits/NP
+por by/PREP for/PREP
+primera first/N bottom_gear/N
+puedo be_able_to/V1 can/V1 can/V3 were_able_to/VP was_able_to/VP could/VF will_be_able_to/VF
+puesta putting/N setting/N
+que that/CONJ than/CONJ what/ADJ what/PRO that/PRO
+quedado I_stayed/V1 left/ADJ lost/ADJ
+recorre walk/V1 walks/V3 walked/VP will_walk/VF travel/V1 travels/V3 traveled/VP will_travel/VF
+restaurante restaurant/N restaurants/NP eatery/N eateries/NP
+roja red/ADJ ruddy/ADJ
+rumbo course/N courses/NP direction/N directions/NP
+salir leave/V1 leaves/V3 left/VP will_leave/VF go_out/V1 goes_out/V3 went_out/VP will_go_out/VF
+seguridad security/N securities/NP safety/N safeties/NP
+señalaba note/V1 notes/V3 noted/VP will_note/VF mark/V1 marks/V3 marked/VP will_mark/VF
+sin without/PREP out_of/PREP except/ADV
+sobre about/PREP on/PREP envelope/N envolopes/NP packet/N packets/NP
+sol sun/N suns/NP sunshine/N sunshines/NP
+sólo only/ADV alone/ADV
+su your/PRO its/PRO his/ADJ
+sus their/PRO its/PRO his/ADJ
+sé know/V1 knows/V3 knew/VP will_know/VF
+taxi taxi/N taxis/NP cab/N cab/NP
+te you/PRO thee/PRO
+tipo type/N types/NP kind/N kinds/NP
+trenes trains/NP train/N
+tu your/PRO thy/ADJ
+un a/ART an/ART one/ADJ
+una a/ART an/ART one/ADJ
+vagando drifting/N wander/V1 wanders/V3
+ventana window/N windows/NP deadlight/N deadlights/NP
+vez time/N times/NP turn/N turns/NP
+vieja old_woman/N old_women/NP old_lady/N old_ladies/NP
+y and/CONJ
+yo I/PRO self/N
+ánimo encouragement/N encouragments/NP mind/N minds/NP
