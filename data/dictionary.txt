@@ -1,12 +1,27 @@
-Conferencia Conference/N Conferences/NP Lecture/N Lectures/NP
+1945 1945/PN
+6 6/N
+24 24/N
+Ariza Ariza/PN
+Conferencia Conference/N Conferences/NP 
+Daza Daza/PN
+Hiroshima Hiroshima/PN
+Lecture/N Lectures/NP
 EEP EEP/PN
 Europa Europe/PN
 Faustino Faustino/PN
+Fermina Fermina/PN
+Florentino Florentino/PN
+Harry Harry/PN
 Japón Japan/PN
+Juvenal Juvenal/PN
 Manhattan Manhattan/PN
 Parlamento Parliament/PN parliament/N
+Potsdam Postsdam/PN
+S S/PN
 Saralegui Saralegui/PN
+Truman Truman/PN
 Tymoshenko Tymoshenko/PN
+Urbino Urbino/PN
 Yanukovych Yanukovych/PN
 Yulia Yulia/PN
 a to/PREP at/PREP
@@ -32,6 +47,7 @@ avances advances/NP advance/N progress/N progresses/NP
 bautizado baptized/ADJ
 bebidas drink/N beverage/N drinks/NP beverages/NP
 bomba pump/N pumps/NP bomb/N bombs/NP
+Boy Boy/PN
 buscar search/V1 searches/V3 searched/VP will_search/VF
 cada each/ADJ every/ADJ each/PRO every/PRO
 calles streets/NP street/N road/N roads/NP
@@ -124,7 +140,7 @@ hotel hotel/N guesthouse/N hotels/NP guesthouses/NP
 hoy today/ADV today/N
 hubo were/VP 
 imaginarte imagine/V1 imagines/V3 imagined/VP will_imagine/VF
-imcompletas incomplete/ADJ sketchy/ADJ
+incompletas incomplete/ADJ sketchy/ADJ
 importantes important/ADJ significant/ADJ
 incapaz unable/ADJ incapable/ADJ
 incendio fire/N fires/NP burning/N burnings/NP  
@@ -144,6 +160,7 @@ le you/PRO him/PRO
 les them/PRO
 liberación release/N liberation/N
 libro book/N books/NP
+Little Little/PN
 llegar get/V1 gets/V3 reach/V1 reaches/V3 got/VP will_get/VF reached/VP will_reach/VF
 llegase reached/VP will_reach/VF reach/V1 reaches/V3 get/V1 gets/V3 got/VP will_get/VF
 lo it/PRO him/PRO the/ART
@@ -207,6 +224,7 @@ programación programming/N
 pronto soon/ADV before_long/ADV early/ADJ prompt/ADJ
 proyectado projected/VP project/V1 projects/V3 will_project/VF throw/V1 throws/V3 threw/VP will_throw/VF
 prueba test/N tests/NP exam/N exams/NP
+pueden be_able_to/V1 can/V1 can/V3 
 puedo be_able_to/V1 can/V1 can/V3 were_able_to/VP was_able_to/VP could/VF will_be_able_to/VF
 puesta putting/N setting/N
 que that/PRO what/PRO that/CONJ then/CONJ than/CONJ what/ADJ 
@@ -274,3 +292,4 @@ yo I/PRO self/N
 ámbitos areas/NP area/N scope/N scopes/NP
 ánimo encouragement/N encouragments/NP mind/N minds/NP
 últimas last/ADJ latest/ADJ
+última last/ADJ latest/ADJ
