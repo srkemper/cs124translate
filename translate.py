@@ -78,6 +78,13 @@ def main():
 	tagged_sentences = []
 	for idx, sentence in enumerate(sentences_lists):
 		if sentence == "": continue
+		sentence = sentence.replace('.','')
+		sentence = sentence.replace(',','')
+		sentence = sentence.replace(':','')
+		sentence = sentence.replace('(','')
+		sentence = sentence.replace(')','')
+		sentence = sentence.replace('-','')
+		sentence = sentence.lower()
 		tagged_sentences.append(hmm_tagger.tag(sentence.split()))
 		print("")
 
