@@ -4,6 +4,9 @@ import getopt
 import os
 import math
 import nltk
+from HolbrookCorpus import HolbrookCorpus
+from LanguageModel import LanguageModel
+from nltk.corpus import brown
 from nltk.corpus import cess_esp
 from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTagger
 
@@ -37,6 +40,7 @@ def noun_of_the_noun_switch(translation_list):
 				ti=idx
 				the=True
 			if "/N" in word or "/NP" in word and fi==-1:
+				None
 
 
 
@@ -46,7 +50,27 @@ def loadList(file_name):
         l = [line.strip() for line in f]
     return l
 
+def testLanguageModel():
+	trainingCorpus = HolbrookCorpus(brown.sents())
+  	
+	LM = LanguageModel(trainingCorpus)
+	
+	q = []
+	q.append("I like to trained.")
+	q.append("I like to trains.")
+	q.append("I like to train.")
+	q.append("I liked to training.")
+
+	best = LM.most_likely(q)
+	
+	print best
+
+	return
+
 def main():
+
+	testLanguageModel()
+
 	tagged_corpus = cess_esp.tagged_sents()
 	size = int(len(tagged_corpus) * .9)
 	training = tagged_corpus[:size]
