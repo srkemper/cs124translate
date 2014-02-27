@@ -1,6 +1,6 @@
 import math, collections
 
-class CustomLanguageModel:
+class LanguageModel:
 
   STUPID_K = 0.4
 
@@ -54,3 +54,14 @@ class CustomLanguageModel:
         score -= math.log(self.total + len(self.unigramCounts))
 
     return score
+
+  def most_likely(self, sentences):
+    m = (float("-inf"),"")
+    for s in sentences:
+        score = self.score(s)
+        print s
+        print score
+        if score > m[0]:
+            m = (score, s)
+    return m[1]
+
