@@ -116,8 +116,14 @@ def main():
 				key = word.lower()
 			else:
 				translations.append(word)
-		dictionary[key]=translations
-	#print dictionary
+		dictionary[key]=len(translations)
+	print dictionary
+	s = 0
+	for v in dictionary.values():
+		s += v
+	s /= len(dictionary)
+	print "avg num values = " + str(s)
+	return
 
 	tagged_sentences = []
 	for idx, sentence in enumerate(sentences_lists):
