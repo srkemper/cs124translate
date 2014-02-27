@@ -132,10 +132,9 @@ def testLanguageModel():
 	LM = LanguageModel(trainingCorpus)
 	
 	q = []
-	q.append("I like to trained.")
-	q.append("I like to trains.")
 	q.append("I like to train.")
-	q.append("I liked to training.")
+	q.append("I like to  train.")
+	q.append("I   like to train.")
 
 	best = LM.most_likely(q)
 	
@@ -145,7 +144,9 @@ def testLanguageModel():
 
 def main():
 
-	testLanguageModel()
+	#testLanguageModel()
+
+
 
 	#tagged_corpus = cess_esp.tagged_sents()
 	#size = int(len(tagged_corpus) * .9)
