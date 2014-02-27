@@ -17,13 +17,102 @@ from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTa
 import re
 from random import randint
 
-def get_translations_by_pos(word):
-	tag = word.split("/")[1]
-	word = word.split("/")[0]
+def get_our_tags_from_nltk(tag):
+	tags = []
+	matches = re.findall("(^nc.s...)",tag) #singular noun
+	if(len(matches))>0:
+		tags.append("N")
+	matches = re.findall("(^nc.p...)",tag) #plural noun
+	if(len(matches))>0:
+		tags.append("NP")
+	matches = re.findall("(^np.....)",tag) #proper noun
+	if(len(matches))>0:
+		tags.append("PN")
+	matches = re.findall("(^a.....)",tag) #adjective
+	if(len(matches))>0:
+		tags.append("ADJ")
+	matches = re.findall("(^r.)",tag) #adverb
+	if(len(matches))>0:
+		tags.append("ADV")
+	matches = re.findall("(^sp...)",tag) #preposition
+	if(len(matches))>0:
+		tags.append("PREP")
+	matches = re.findall("(^c.)",tag) #conjunction
+	if(len(matches))>0:
+		tags.append("CONJ")
+	matches = re.findall("(^da....)",tag) #article
+	if(len(matches))>0:
+		tags.append("ART")
+	matches = re.findall("(^di....)",tag) #singular noun
+	if(len(matches))>0:
+		tags.append("ART")
+		tags.append("PRO")
+	matches = re.findall("(^v.n....)",tag) #singular noun
+	if(len(matches))>0:
+		tags.append("to_V1")
+	matches = re.findall("(^v.n....)",tag) #singular noun
+	if(len(matches))>0:
+		tags.append("to_V1")
+	matches = re.findall("(^v..i3..|v.si3..|v..s3..)",tag) #singular noun
+	if(len(matches))>0:
+		tags.append("VP")
+	matches = re.findall("(^v.p0...|v..p1..)",tag) #singular noun
+	if(len(matches))>0:
+		tags.append("V1")
+	matches = re.findall("(^v..p3)",tag) #singular noun
+	if(len(matches))>0:
+		tags.append("V3")
+	matches = re.findall("(^v..f...)",tag) #singular noun
+	if(len(matches))>0:
+		tags.append("VF")
 
-	# write regexes to determine which of our tags (N, NP, V1, etc) to look for
-	# return all those tags
-	pass
+	matches = re.findall("(v......)", tag)
+	if(len(matches) > 0 and len(tags) == 0):
+		tags.append("V1")
+		tags.append("V3")
+		tags.append("VP")
+		tags.append("VF")
+		tags.append("to_V1")
+
+	return tags
+
+def get_translations_by_pos(word, dictionary):
+	source_tag = word.split("/")[1]
+	source_word = word.split("/")[0]
+
+	# set up new dic organized by trans
+	possibilities = dictionary.get(source_word)
+	pos_dict = {}
+	for possiblity in possibilities:
+		tag = possiblity.split("/")[1]
+		word = possiblity.split("/")[0]
+		if tag not in pos_dict:
+			pos_dict[tag] = []
+		pos_dict[tag].append(word)
+
+	# turn their tag into ours
+	tags = get_our_tags_from_nltk(source_tag)
+
+	results = []
+	for tag in tags:
+		prefix = ""
+		if tag == "to_V1":
+			tag = "V1"
+			prefix = "to_"
+		words = pos_dict[tag]
+		for word in words:
+			results.append(prefix + word)
+
+	if len(results) == 0:
+		for trans in dictionary.get(source_word):
+			results.append(trans.split("/")[0])
+
+	print "source = " + word
+	print "tags = "
+	print tags
+	print "results = "
+	print results
+	return results
 
 def remove_pos_tags_and_underscores(translation_list):
 	new_list = []
@@ -160,9 +249,9 @@ def main():
 	tagged_corpus = cess_esp.tagged_sents()
 	size = int(len(tagged_corpus) * .9)
 	training = tagged_corpus[:size]
-	print "training HiddenMarkovModelTagger"
-	hmm_tagger = HiddenMarkovModelTagger.train(training)
-	print "finished training"
+	# print "training HiddenMarkovModelTagger"
+	# hmm_tagger = HiddenMarkovModelTagger.train(training)
+	# print "finished training"
 
 	dict_file = "./data/dictionary.txt"
 	sentences_file = "./data/corpus.txt"
@@ -187,6 +276,7 @@ def main():
 		s += v
 	s /= len(dictionary)
 	print "avg num values = " + str(s)
+	# get_translations_by_pos("momento/ncms000", {"momento": ['time/N', 'times/NP', 'moment/N', 'moments/NP']}) #testing tag method
 	return
 
 	tagged_sentences = []
