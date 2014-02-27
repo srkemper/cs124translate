@@ -11,9 +11,9 @@ from nltk.corpus import brown
 from nltk.corpus import cess_esp
 from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTagger
 
-#import nltk
-#from nltk.corpus import cess_esp
-#from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTagger
+import nltk
+from nltk.corpus import cess_esp
+from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTagger
 import re
 from random import randint
 
@@ -26,10 +26,11 @@ def remove_pos_tags_and_underscores(translation_list):
 	for word in new_list:
 		words = word.split('_')
 		for tok in words:
-			final_list.append(tok)
+			if tok!='':
+				final_list.append(tok)
 	return final_list
 
-def append_next_three_words(list_of_likely_translations,index,spanish_sentence_list,dictionary):
+def append_next_words(list_of_likely_translations,index,spanish_sentence_list,dictionary):
 	newList = []
 	word = spanish_sentence_list[index]
 		
@@ -70,7 +71,7 @@ def append_next_three_words(list_of_likely_translations,index,spanish_sentence_l
 def rank_by_probability_and_discard_tail(list_of_likely_translations):
 	newList = []
 	for idx, lis in enumerate(list_of_likely_translations):
-		if idx<1000:
+		if idx<2:
 			newList.append(lis)
 	return newList
 
@@ -79,7 +80,7 @@ def likely_translations(spanish_sentence_list,dictionary):
 	list_of_likely_translations=[]
 	index=0
 	while index<len(spanish_sentence_list):
-		list_of_likely_translations=  append_next_three_words(list_of_likely_translations,index,spanish_sentence_list,dictionary)
+		list_of_likely_translations=  append_next_words(list_of_likely_translations,index,spanish_sentence_list,dictionary)
 		list_of_likely_translations= rank_by_probability_and_discard_tail(list_of_likely_translations)
 		index+=1
 	return list_of_likely_translations
@@ -133,7 +134,6 @@ def testLanguageModel():
 	
 	q = []
 	q.append("I like to trained.")
-	q.append("I like to trains.")
 	q.append("I like to train.")
 	q.append("I liked to training.")
 
@@ -147,12 +147,12 @@ def main():
 
 	testLanguageModel()
 
-	#tagged_corpus = cess_esp.tagged_sents()
-	#size = int(len(tagged_corpus) * .9)
-	#training = tagged_corpus[:size]
-	#print "training HiddenMarkovModelTagger"
-	#hmm_tagger = HiddenMarkovModelTagger.train(training)
-	#print "finished training"
+	tagged_corpus = cess_esp.tagged_sents()
+	size = int(len(tagged_corpus) * .9)
+	training = tagged_corpus[:size]
+	print "training HiddenMarkovModelTagger"
+	hmm_tagger = HiddenMarkovModelTagger.train(training)
+	print "finished training"
 
 	dict_file = "./data/dictionary.txt"
 	sentences_file = "./data/corpus.txt"
@@ -176,7 +176,7 @@ def main():
 	tagged_sentences = []
 	for idx, sentence in enumerate(sentences_lists):
 		if sentence == "": continue
-		#tagged_sentences.append(hmm_tagger.tag(sentence.split()))
+		tagged_sentences.append(hmm_tagger.tag(sentence.split()))
 		print("")
 
 
@@ -189,7 +189,8 @@ def main():
 		list_of_likely_translations = []
 	
 		list_of_likely_translations= likely_translations(sentence_list,dictionary)
-			#print list_of_likely_translations
+		##if idx==0:
+		#	print list_of_likely_translations
 			#for lis in list_of_likely_translations:
 				#print lis
 
@@ -205,21 +206,19 @@ def main():
 			#print(word)
 			if word!='':
 				trans = dictionary.get(word)
-#				
 				demo_translation_list.append(trans[0])
-			
+				
+		print demo_translation_list
 		pos_free_translation_list = remove_pos_tags_and_underscores(demo_translation_list)
-		#print("Initial Translation: ",' '.join(pos_free_translation_list),)
+		print("Initial Translation: ",' '.join(pos_free_translation_list),)
 		
 		demo_translation_list= noun_adjective_switch(demo_translation_list)
 		demo_translation_list = noun_of_the_noun_switch(demo_translation_list)
 		
 		pos_free_translation_list = remove_pos_tags_and_underscores(demo_translation_list)
-		#print("Final Translation: ",' '.join(pos_free_translation_list),)
+		print("Final Translation: ",' '.join(pos_free_translation_list),)
 
-    #cp.train(clues, gold_parsed_clues)
-    ##parsed_clues = cp.parseClues(clues)
-    #cp.evaluate(parsed_clues, gold_parsed_clues)
+  
 
 
 if __name__ == '__main__':
