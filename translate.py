@@ -29,10 +29,64 @@ def remove_pos_tags_and_underscores(translation_list):
 			final_list.append(tok)
 	return final_list
 
+def append_next_three_words(list_of_likely_translations,index,spanish_sentence_list,dictionary):
+	newList = []
+	word = spanish_sentence_list[index]
+		
+	word = word.replace('.','')
+	word = word.replace(',','')
+	word = word.replace(':','')
+	word = word.replace('(','')
+	word = word.replace(')','')
+	word = word.replace('-','')
+	word = word.lower()
+		
+	if word!='' and index==0:
+		#print index
+		translations = dictionary.get(word) 
+		translations.append('')
+		#newList.append(translations)
+		for trans in translations: 
+			newList.append([trans])
+		#print "NEWLIST", newList
+	elif word!='':
+		translations = dictionary.get(word) 
+		translations.append('')
+		for trans in translations:
+			#print word,trans
+			copy = []
+			for translation_so_far in list_of_likely_translations:
+				
+				copy = list(translation_so_far)
+				#print copy
+				copy.append(trans)
+				#print copy
+				#print("XXXXXXXXXXXX")
+				#print translation_so_far
+				newList.append(copy)
+	#print index,newList
+	return newList
+						
+def rank_by_probability_and_discard_tail(list_of_likely_translations):
+	newList = []
+	for idx, lis in enumerate(list_of_likely_translations):
+		if idx<1000:
+			newList.append(lis)
+	return newList
+
+
+def likely_translations(spanish_sentence_list,dictionary):
+	list_of_likely_translations=[]
+	index=0
+	while index<len(spanish_sentence_list):
+		list_of_likely_translations=  append_next_three_words(list_of_likely_translations,index,spanish_sentence_list,dictionary)
+		list_of_likely_translations= rank_by_probability_and_discard_tail(list_of_likely_translations)
+		index+=1
+	return list_of_likely_translations
 
 def noun_adjective_switch(translation_list):
 	switch = 1
-	regex = "(.*) (\w*/NP?) (\w*)/ADJ? (.*)"
+	regex = "(.*) (\w*/NP?) (\w*)/ADJ(.*)"
 	trans = " ".join(translation_list)
 	while switch!=0:
 		switch =0
@@ -128,15 +182,7 @@ def main():
 	tagged_sentences = []
 	for idx, sentence in enumerate(sentences_lists):
 		if sentence == "": continue
-		sentence = sentence.replace('.','')
-		sentence = sentence.replace(',','')
-		sentence = sentence.replace(':','')
-		sentence = sentence.replace('(','')
-		sentence = sentence.replace(')','')
-		sentence = sentence.replace('-','')
-		sentence = sentence.lower()
-		# tagged_sentences.append(hmm_tagger.tag(sentence.split()))
-
+		#tagged_sentences.append(hmm_tagger.tag(sentence.split()))
 		print("")
 
 
@@ -144,8 +190,14 @@ def main():
 
 		sentence_list = sentence.split()
 
-		full_translation_list_of_lists = []
+		
 		demo_translation_list = []
+		list_of_likely_translations = []
+	
+		list_of_likely_translations= likely_translations(sentence_list,dictionary)
+			#print list_of_likely_translations
+			#for lis in list_of_likely_translations:
+				#print lis
 
 		for word in sentence_list:
 			# print(word)
@@ -159,25 +211,17 @@ def main():
 			#print(word)
 			if word!='':
 				trans = dictionary.get(word)
-#				for translation in trans:
-#					if idx==0:
-#						full_translation_list_of_lists.append(word)
-#					else:
-						#for lest in full_translation_list_of_lists:
-							#lest.
-		#print(translation_list)
-		
-		#print tagged_sentences
-			demo_translation_list.append(trans[(idx+3)%len(trans)])
+#				
+				demo_translation_list.append(trans[0])
 			
 		pos_free_translation_list = remove_pos_tags_and_underscores(demo_translation_list)
-		print("Initial Translation: ",' '.join(pos_free_translation_list),)
+		#print("Initial Translation: ",' '.join(pos_free_translation_list),)
 		
-		translation_list= noun_adjective_switch(demo_translation_list)
-		translation_list = noun_of_the_noun_switch(demo_translation_list)
+		demo_translation_list= noun_adjective_switch(demo_translation_list)
+		demo_translation_list = noun_of_the_noun_switch(demo_translation_list)
 		
 		pos_free_translation_list = remove_pos_tags_and_underscores(demo_translation_list)
-		print("Final Translation: ",' '.join(pos_free_translation_list),)
+		#print("Final Translation: ",' '.join(pos_free_translation_list),)
 
     #cp.train(clues, gold_parsed_clues)
     ##parsed_clues = cp.parseClues(clues)
