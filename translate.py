@@ -9,6 +9,14 @@ import math
 import re
 from random import randint
 
+def get_translations_by_pos(word):
+	tag = word.split("/")[1]
+	word = word.split("/")[0]
+
+	# write regexes to determine which of our tags (N, NP, V1, etc) to look for
+	# return all those tags
+	pass
+
 def remove_pos_tags_and_underscores(translation_list):
 	new_list = []
 	for word in translation_list:
