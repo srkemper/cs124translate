@@ -8,6 +8,7 @@ import pickle
 import nltk
 from HolbrookCorpus import HolbrookCorpus
 from LanguageModel import LanguageModel
+from LaplaceUnigramLanguageModel import LaplaceUnigramLanguageModel
 from nltk.corpus import brown
 from nltk.corpus import cess_esp
 from nltk import UnigramTagger, BigramTagger, TrigramTagger#, HiddenMarkovModelTagger
@@ -243,15 +244,32 @@ def loadList(file_name):
         l = [line.strip() for line in f]
     return l
 
+def testUniLanguageModel():
+	q = []
+	q.append("Catholic")
+	q.append("Ramish")
+	q.append("children")
+	q.append("pervert")
+	q.append("molest")
+
+	for w in q:
+		print str(ULM.score(w)) + w
+
 def testLanguageModel():
 	
 	q = []
-	q.append("I like to train.")
-	q.append("I like to training.")
-	q.append("He had been liking that training.")
-	q.append("That trained is so much to my liking.")
-	q.append("Cats are cute?")
-	q.append("Cats are cute!")
+	#q.append("I like to train.")
+	#q.append("I like to training.")
+	#q.append("He had been liking that training.")
+	#q.append("That trained is so much to my liking.")
+	#q.append("Cats are cute?")
+	#q.append("Cats are cute!")
+
+	q.append("Catholic")
+	q.append("Romish")
+	q.append("children")
+	q.append("pervert")
+	q.append("molest")
 
 	best = LM.n_most_likely(q, 4)
 	
@@ -262,14 +280,15 @@ def testLanguageModel():
 
 def main():
 	global LM 
-	
+	global ULM
 
 	print "setting training corpus"
 	trainingCorpus = HolbrookCorpus(brown.sents())
 
-	print "training language model"
+	print "training language models"
 	
 	LM = LanguageModel(trainingCorpus)
+	ULM = LaplaceUnigramLanguageModel(trainingCorpus)
 	
 	print "training complete"
 	print "------------------"
@@ -286,7 +305,10 @@ def main():
 
 
 
-	#testLanguageModel()
+	testLanguageModel()
+	testUniLanguageModel()
+
+	return
 
 	#tagged_corpus = cess_esp.tagged_sents()
 	#size = int(len(tagged_corpus) * .9)
