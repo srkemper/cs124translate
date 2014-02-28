@@ -10,11 +10,11 @@ from HolbrookCorpus import HolbrookCorpus
 from LanguageModel import LanguageModel
 from nltk.corpus import brown
 from nltk.corpus import cess_esp
-from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTagger
+from nltk import UnigramTagger, BigramTagger, TrigramTagger#, HiddenMarkovModelTagger
 
 import nltk
 from nltk.corpus import cess_esp
-from nltk import UnigramTagger, BigramTagger, TrigramTagger, HiddenMarkovModelTagger
+
 import re
 from random import randint
 
@@ -90,7 +90,7 @@ def get_translations_by_pos(word, dictionary):
 
 	source_tag = word.split("/")[1]
 	source_word = word.split("/")[0]
-	print word, source_word
+	#print word, source_word
 
 	# set up new dic organized by trans
 	possibilities = dictionary.get(source_word)
@@ -98,7 +98,7 @@ def get_translations_by_pos(word, dictionary):
 	if possibilities == None or len(possibilities) == 0:
 		return []
 	for possiblity in possibilities:
-		print possiblity
+		#print possiblity
 		tag = possiblity.split("/")[1]
 		word = possiblity.split("/")[0]
 		if tag not in pos_dict:
@@ -128,7 +128,7 @@ def get_translations_by_pos(word, dictionary):
 	# print "tags = "
 	# print tags
 	# print "results = "
-	print results
+	#print results
 	return results
 
 def remove_pos_tags_and_underscores(translation_list):
@@ -159,7 +159,7 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 	if word!='' and index==0:
 		#print index
 		translations = get_translations_by_pos(word, dictionary)
-		translations.append('')
+		#translations.append('')
 
 		#newList.append(translations)
 		for trans in translations: 
@@ -167,7 +167,7 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 		#print "NEWLIST", newList
 	elif word!='':
 		translations = get_translations_by_pos(word, dictionary) 
-		translations.append('')
+		#translations.append('')
 
 		for trans in translations:
 			#print word,trans
@@ -185,7 +185,7 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 	return newList
 						
 def rank_by_probability_and_discard_tail(list_of_likely_translations):
-	k = min(len(list_of_likely_translations), 5)
+	k = min(len(list_of_likely_translations), 5000)
 	indices = random.sample(range(len(list_of_likely_translations)), k)
 	return [list_of_likely_translations[i] for i in sorted(indices)]
 
@@ -260,25 +260,29 @@ def testLanguageModel():
 
 def main():
 	global LM 
-	
-	trainingCorpus = HolbrookCorpus(brown.sents())
-	LM = LanguageModel(trainingCorpus)
 
-	print "finished training LM"
 
 	#testLanguageModel()
 
-	tagged_corpus = cess_esp.tagged_sents()
-	size = int(len(tagged_corpus) * .9)
-	training = tagged_corpus[:size]
+	#tagged_corpus = cess_esp.tagged_sents()
+	#size = int(len(tagged_corpus) * .9)
+	#training = tagged_corpus[:size]
+	
 	#print "training HiddenMarkovModelTagger"
 	#hmm_tagger = HiddenMarkovModelTagger.train(training)
 	#print "finished training"
 
 	dict_file = "./data/dictionary.txt"
 	sentences_file = "./data/corpus.txt"
+	tagged_corpus_file = "./data/tagged_sentences.txt"
 	dictionary_lists = loadList(dict_file)
 	sentences_lists = loadList(sentences_file)
+	tagged_sentences = loadList(tagged_corpus_file)
+	
+	print "training LM..."
+	trainingCorpus = HolbrookCorpus(brown.sents())
+	LM = LanguageModel(trainingCorpus)
+	print "finished training LM"
 	#print sentences_lists
 	#print dictionary_lists
 	dictionary = dict()
@@ -309,7 +313,7 @@ def main():
 	# get_translations_by_pos("momento/ncms000", {"momento": ['time/N', 'times/NP', 'moment/N', 'moments/NP']}) #testing tag method
 	# return
 
-	tagged_sentences = []
+	
 	for idx, sentence in enumerate(sentences_lists):
 		if sentence == "": continue
 
@@ -322,12 +326,12 @@ def main():
 		print("Sentence ",idx+1)
 
 		# sentence_list = sentence.split()
-		tagged_list = hmm_tagger.tag(sentence.split())
-		tagged_sentence = []
+		#tagged_list = hmm_tagger.tag(sentence.split())
+		tagged_sentence = tagged_sentences[idx].split()
 		
-		for pair in tagged_list:
-			tagged_sentence.append("/".join(pair))
-		print tagged_sentence
+		#for pair in tagged_list:
+		#	tagged_sentence.append("/".join(pair))
+		#print tagged_sentence
 		sentence_list = tagged_sentence
 
 		
@@ -335,7 +339,18 @@ def main():
 		list_of_likely_translations = []
 	
 		list_of_likely_translations= likely_translations(sentence_list,dictionary)
-		print list_of_likely_translations
+		list_of_likely_translations_as_strings = []
+		for lis in list_of_likely_translations:
+			lis = noun_adjective_switch(lis)
+			lis = noun_of_the_noun_switch(lis)
+			clean_lis = remove_pos_tags_and_underscores(lis)
+			
+			string = ' '.join(clean_lis)
+			list_of_likely_translations_as_strings.append(string)
+
+		best = LM.n_most_likely(list_of_likely_translations_as_strings, 1)
+		print "BEST", best[0]
+		#print list_of_likely_translations
 		##if idx==0:
 		#	print list_of_likely_translations
 			#for lis in list_of_likely_translations:
@@ -355,15 +370,15 @@ def main():
 				trans = dictionary.get(word)
 				demo_translation_list.append(trans[0])
 				
-		print demo_translation_list
+		#print demo_translation_list
 		pos_free_translation_list = remove_pos_tags_and_underscores(demo_translation_list)
-		print("Initial Translation: ",' '.join(pos_free_translation_list),)
+		#print("Initial Translation: ",' '.join(pos_free_translation_list),)
 		
 		demo_translation_list= noun_adjective_switch(demo_translation_list)
 		demo_translation_list = noun_of_the_noun_switch(demo_translation_list)
 		
 		pos_free_translation_list = remove_pos_tags_and_underscores(demo_translation_list)
-		print("Final Translation: ",' '.join(pos_free_translation_list),)
+		#print("Final Translation: ",' '.join(pos_free_translation_list),)
 
   
 

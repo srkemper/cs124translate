@@ -279,7 +279,7 @@ una a/ART an/ART one/ADJ
 uranio uranium/N
 urgencia urgency/N emergency/N emergencies/NP
 vagando drifting/N wander/V1 wanders/V3
-valoraciones rating/N raitings/NP assessment/N assessments/NP
+valoraciones rating/N ratings/NP assessment/N assessments/NP
 vencidos defeated/ADJ beaten/ADJ losing/ADJ overdue/ADJ
 ventana window/N windows/NP deadlight/N deadlights/NP
 ventas sale/N disposal/N sales/NP disposals/NP
