@@ -1,4 +1,5 @@
 import math, collections
+from operator import itemgetter
 
 class LanguageModel:
 
@@ -55,13 +56,17 @@ class LanguageModel:
 
     return score
 
-  def most_likely(self, sentences):
-    m = (float("-inf"),"")
+
+  def n_most_likely(self, sentences, n):
+    """Given a list of string sentences, returns the n most likely"""
+    #m = (float("-inf"),"")
+    scores = []
     for s in sentences:
-        score = self.score(s)
-        print s
-        print score
-        if score > m[0]:
-            m = (score, s)
-    return m[1]
+        prob = self.score(s)
+        scores.append((s, prob))
+    scores = sorted(scores, key=itemgetter(1,0), reverse=True)
+    sents = []
+    for tup in scores[:n]:
+        sents.append(tup[0])
+    return sents
 

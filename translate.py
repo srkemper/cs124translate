@@ -3,6 +3,7 @@ import sys
 import getopt
 import os
 import math
+import random
 
 import nltk
 from HolbrookCorpus import HolbrookCorpus
@@ -45,14 +46,14 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 	if word!='' and index==0:
 		#print index
 		translations = dictionary.get(word) 
-		translations.append('')
+		#translations.append('')
 		#newList.append(translations)
 		for trans in translations: 
 			newList.append([trans])
 		#print "NEWLIST", newList
 	elif word!='':
 		translations = dictionary.get(word) 
-		translations.append('')
+		#translations.append('')
 		for trans in translations:
 			#print word,trans
 			copy = []
@@ -69,19 +70,17 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 	return newList
 						
 def rank_by_probability_and_discard_tail(list_of_likely_translations):
-	newList = []
-	for idx, lis in enumerate(list_of_likely_translations):
-		if idx<2:
-			newList.append(lis)
-	return newList
+	k = min(len(list_of_likely_translations), 5)
+	indices = random.sample(range(len(list_of_likely_translations)), k)
+	return [list_of_likely_translations[i] for i in sorted(indices)]
 
 
 def likely_translations(spanish_sentence_list,dictionary):
 	list_of_likely_translations=[]
 	index=0
 	while index<len(spanish_sentence_list):
-		list_of_likely_translations=  append_next_words(list_of_likely_translations,index,spanish_sentence_list,dictionary)
-		list_of_likely_translations= rank_by_probability_and_discard_tail(list_of_likely_translations)
+		list_of_likely_translations =  append_next_words(list_of_likely_translations,index,spanish_sentence_list,dictionary)
+		list_of_likely_translations = rank_by_probability_and_discard_tail(list_of_likely_translations)
 		index+=1
 	return list_of_likely_translations
 
@@ -128,33 +127,38 @@ def loadList(file_name):
     return l
 
 def testLanguageModel():
-	trainingCorpus = HolbrookCorpus(brown.sents())
-  	
-	LM = LanguageModel(trainingCorpus)
 	
 	q = []
 	q.append("I like to train.")
-	q.append("I like to  train.")
-	q.append("I   like to train.")
+	q.append("I like to training.")
+	q.append("He had been liking that training.")
+	q.append("That trained is so much to my liking.")
+	q.append("Cats are cute?")
+	q.append("Cats are cute!")
 
-	best = LM.most_likely(q)
+	best = LM.n_most_likely(q, 4)
 	
-	print best
+	for tup in best:
+		print tup
 
 	return
 
 def main():
+	global LM 
+	
+	trainingCorpus = HolbrookCorpus(brown.sents())
+	LM = LanguageModel(trainingCorpus)
+
+	print "finished training LM"
 
 	#testLanguageModel()
-
-
 
 	tagged_corpus = cess_esp.tagged_sents()
 	size = int(len(tagged_corpus) * .9)
 	training = tagged_corpus[:size]
-	print "training HiddenMarkovModelTagger"
-	hmm_tagger = HiddenMarkovModelTagger.train(training)
-	print "finished training"
+	#print "training HiddenMarkovModelTagger"
+	#hmm_tagger = HiddenMarkovModelTagger.train(training)
+	#print "finished training"
 
 	dict_file = "./data/dictionary.txt"
 	sentences_file = "./data/corpus.txt"
@@ -172,20 +176,20 @@ def main():
 				key = word.lower()
 			else:
 				translations.append(word)
-		dictionary[key]=len(translations)
-	print dictionary
-	s = 0
-	for v in dictionary.values():
-		s += v
-	s /= len(dictionary)
-	print "avg num values = " + str(s)
-	return
+		dictionary[key]=translations
+	#print dictionary
+	#s = 0
+	#for v in dictionary.values():
+	#	s += v
+	#s /= len(dictionary)
+	#print "avg num values = " + str(s)
+	#return
 
 	tagged_sentences = []
 	for idx, sentence in enumerate(sentences_lists):
 		if sentence == "": continue
-		tagged_sentences.append(hmm_tagger.tag(sentence.split()))
-		print("")
+		#tagged_sentences.append(hmm_tagger.tag(sentence.split()))
+		#print("")
 
 
 		print("Sentence ",idx+1)
@@ -197,6 +201,7 @@ def main():
 		list_of_likely_translations = []
 	
 		list_of_likely_translations= likely_translations(sentence_list,dictionary)
+		print list_of_likely_translations
 		##if idx==0:
 		#	print list_of_likely_translations
 			#for lis in list_of_likely_translations:
