@@ -263,6 +263,7 @@ def testLanguageModel():
 def main():
 	global LM 
 	
+
 	print "setting training corpus"
 	trainingCorpus = HolbrookCorpus(brown.sents())
 
@@ -272,6 +273,16 @@ def main():
 	
 	print "training complete"
 	print "------------------"
+
+	# print "training language model"
+
+	# trainingCorpus = HolbrookCorpus(brown.sents())
+	# LM = LanguageModel(trainingCorpus)
+
+	# print "training complete"
+
+	# print "------------------"
+
 
 
 
