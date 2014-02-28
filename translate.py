@@ -185,7 +185,7 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 	return newList
 						
 def rank_by_probability_and_discard_tail(list_of_likely_translations):
-	k = min(len(list_of_likely_translations), 5000)
+	k = min(len(list_of_likely_translations), 100)
 	indices = random.sample(range(len(list_of_likely_translations)), k)
 	return [list_of_likely_translations[i] for i in sorted(indices)]
 
@@ -288,10 +288,6 @@ def main():
 	sentences_lists = loadList(sentences_file)
 	tagged_sentences = loadList(tagged_corpus_file)
 	
-	print "training LM..."
-	trainingCorpus = HolbrookCorpus(brown.sents())
-	LM = LanguageModel(trainingCorpus)
-	print "finished training LM"
 	#print sentences_lists
 	#print dictionary_lists
 	dictionary = dict()
@@ -333,6 +329,7 @@ def main():
 		print("")
 
 		print("Sentence ",idx+1)
+		print "Initial = " + sentence
 
 		# sentence_list = sentence.split()
 		#tagged_list = hmm_tagger.tag(sentence.split())
