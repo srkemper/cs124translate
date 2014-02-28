@@ -4,7 +4,7 @@ import getopt
 import os
 import math
 import random
-
+import pickle
 import nltk
 from HolbrookCorpus import HolbrookCorpus
 from LanguageModel import LanguageModel
@@ -263,14 +263,16 @@ def testLanguageModel():
 def main():
 	global LM 
 	
-	print "training language model"
-
+	print "setting training corpus"
 	trainingCorpus = HolbrookCorpus(brown.sents())
+
+	print "training language model"
+	
 	LM = LanguageModel(trainingCorpus)
-
+	
 	print "training complete"
-
 	print "------------------"
+
 
 
 	#testLanguageModel()
@@ -330,8 +332,8 @@ def main():
 		# tagged_sentences.append(hmm_tagger.tag(sentence.split()))
 		print("")
 
-		print("Sentence ",idx+1)
-		print "Initial = " + sentence
+		print "Sentence " + str(idx+1)
+		print "Spanish = " + sentence
 
 		# sentence_list = sentence.split()
 		#tagged_list = hmm_tagger.tag(sentence.split())
@@ -342,11 +344,16 @@ def main():
 		#print tagged_sentence
 		sentence_list = tagged_sentence
 
+		print "tagged sentence = " 
+		print sentence_list
+
 		
 		demo_translation_list = []
 		list_of_likely_translations = []
 	
 		list_of_likely_translations= likely_translations(sentence_list,dictionary)
+		#print "list_of_likely_translations = "
+		#print list_of_likely_translations
 		list_of_likely_translations_as_strings = []
 		for lis in list_of_likely_translations:
 			lis = noun_adjective_switch(lis)
@@ -380,14 +387,16 @@ def main():
 				
 		#print demo_translation_list
 		pos_free_translation_list = remove_pos_tags_and_underscores(demo_translation_list)
-		print("Initial Translation: ",' '.join(pos_free_translation_list),)
+		print"Initial Translation: " + ' '.join(pos_free_translation_list)
 		
 		
 	
-		print("Final Translation: ",best[0])
-		print "Top Ten: ",best
+		print "Top " + str(len(best)) + ":"
+		for i,s in enumerate(best):
+			print str(i) + ":" + s
+		print "Final Translation: " + best[0]
+		print "------------------"
 
-  
 
 
 if __name__ == '__main__':
