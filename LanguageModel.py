@@ -1,5 +1,8 @@
 import math, collections
 from operator import itemgetter
+from nltk.corpus import brown
+from nltk.probability import LidstoneProbDist
+from nltk.model import NgramModel
 
 class LanguageModel:
 
@@ -11,6 +14,7 @@ class LanguageModel:
     self.bigramCounts = collections.defaultdict(lambda: 0)
     self.unigramCounts = collections.defaultdict(lambda: 0)
     self.total = 0
+    self.lm = None
     self.train(corpus)
 
   def train(self, corpus):
@@ -29,6 +33,11 @@ class LanguageModel:
             third = sentence.data[i+2].word
             self.trigramCounts[(token, next, third)] += 1
 
+    train_tokens = brown.words()
+    estimator = lambda fdist, bins: LidstoneProbDist(fdist, 0.2)
+    self.lm = NgramModel(3, train_tokens, True, False, estimator)
+
+
   def score(self, sentence):
     score = 0.0
     for i in xrange(2, len(sentence)):
@@ -38,7 +47,8 @@ class LanguageModel:
         tricount = self.trigramCounts[(first, prev, token)]
         #begin with trigram model
         if tricount > 0:
-            score += math.log(tricount)
+            score += self.lm.prob(token, [prev + " " + first])
+            # score += math.log(tricount)
             score -= math.log(self.bigramCounts[(first, prev)])
             continue
         #back off to bigram model
