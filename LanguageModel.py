@@ -1,7 +1,6 @@
 import math, collections
 from operator import itemgetter
 from nltk.corpus import brown
-from nltk.corpus import gutenberg
 from nltk.probability import LidstoneProbDist
 from nltk.model import NgramModel
 
@@ -17,6 +16,7 @@ class LanguageModel:
     self.total = 0
     self.trilm = None
     self.bilm = None
+    self.unilm = None
     self.train(corpus)
 
   def train(self, corpus):
@@ -35,11 +35,11 @@ class LanguageModel:
             third = sentence.data[i+2].word
             self.trigramCounts[(token, next, third)] += 1
 
-    train_tokens = brown.words() + gutenberg.words()
-    # train_tokens.extend(gutenberg.words())
+    train_tokens = brown.words()
     estimator = lambda fdist, bins: LidstoneProbDist(fdist, 0.2)
     self.trilm = NgramModel(3, train_tokens, True, False, estimator)
     self.bilm = NgramModel(2, train_tokens, True, False, estimator)
+    self.unilm = NgramModel(1, train_tokens, True, False, estimator)
 
 
   def score(self, sentence):
@@ -55,20 +55,22 @@ class LanguageModel:
             # score += math.log(tricount)
             # score -= math.log(self.bigramCounts[(first, prev)])
             score -= self.bilm.prob(first,[prev])
-            continue
+            # continue
         #back off to bigram model
         biCount = self.bigramCounts[(prev, token)]
         if biCount > 0: 
             # score += math.log(biCount)
             score += self.bilm.prob(token, [prev])
             score += math.log(self.STUPID_K)
-            score -= math.log(self.unigramCounts[prev])
-            continue  
+            # score -= math.log(self.unigramCounts[prev])
+            score -= self.unilm.prob(prev, [])
+            # continue  
         #back off to unigram model with +1 smoothing
-        count = self.unigramCounts[token]
-        score += math.log(self.STUPID_K) 
-        score += math.log(count + 1.0)
-        score -= math.log(self.total + len(self.unigramCounts))
+        # count = self.unigramCounts[token]
+        score += math.log(2 * self.STUPID_K) 
+        score += self.unilm.prob(token, [])
+        # score += math.log(count + 1.0)
+        # score -= math.log(self.total + len(self.unigramCounts))
 
     return score
 
