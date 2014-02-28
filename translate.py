@@ -185,7 +185,7 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 	return newList
 						
 def rank_by_probability_and_discard_tail(list_of_likely_translations):
-	k = min(len(list_of_likely_translations), 5)
+	k = min(len(list_of_likely_translations), 100)
 	indices = random.sample(range(len(list_of_likely_translations)), k)
 	return [list_of_likely_translations[i] for i in sorted(indices)]
 
@@ -261,10 +261,14 @@ def testLanguageModel():
 def main():
 	global LM 
 	
+	print "training language model"
+
 	trainingCorpus = HolbrookCorpus(brown.sents())
 	LM = LanguageModel(trainingCorpus)
 
-	print "finished training LM"
+	print "training complete"
+
+	print "------------------"
 
 	#testLanguageModel()
 
