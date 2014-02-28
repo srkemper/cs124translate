@@ -62,15 +62,15 @@ ciudad city/N cities/NP
 como as/ADV like/ADV as/CONJ as/PREP like/PREP eat/V1 eats/V3 ate/VP will_eat/VF
 comunes common/ADJ mutual/ADJ
 comunicaba communicated/VP will_communicate/VF communicate/V1 communicates/V3 report/V1 reports/V3 reported/VP will_report/VF
-comunicada statement/N statements/NP announcement/N announcements/NP connected/ADJ inform/V1 informs/V3 informed/VP will_inform/VF notify/V1 notifies/V3 notified/VP will_notify
+comunicada statement/N statements/NP announcement/N announcements/NP connected/ADJ inform/V1 informs/V3 informed/VP will_inform/VF notify/V1 notifies/V3 notified/VP will_notify/VF
 con with/PREP by/PREP
 condenas convictions/NP conviction/N
 consumidores consumer/N user/N consumers/NP users/NP
 contempla contemplates/V3 contemplate/V1 contemplated/VP will_contemplate/VF watch/V1 watches/V3 watched/VP will_watch/VF
 contribuir contribute/V1 contributes/V3 contributed/VP will_contribute/VF
 convirtieron convert/V1 turn/V1 converts/V3 turns/V3 became/VP converted/VP will_convert/VF will_become/VF
-creía believed/VP will_believe_VF believe/V1 believes/V3 think/V1 thinks/V3 thought/VP will_think/VF
-creó created/VP create/V1 createsV3 will_create/VF make/V1 makesV3 made/VP will_make
+creía believed/VP will_believe/VF believe/V1 believes/V3 think/V1 thinks/V3 thought/VP will_think/VF
+creó created/VP create/V1 creates/V3 will_create/VF make/V1 makes/V3 made/VP will_make/VF
 crianza breeding/N upbringing/N breedings/NP upbringings/NP
 cultural cultural/ADJ cultured/ADJ
 cárcel jail/N jails/NP prison/N prisons/NP
@@ -89,7 +89,7 @@ dividido divided/ADJ split/ADJ
 doctor doctor/N doctors/NP doc/N docs/NP
 donde where/ADV wherein/ADV where/CONJ
 ejecuciones executions/NP execution/N performances/NP performance/N
-ejerció exercise/V1 exercised/VP exercises/V3 will_exercise practice/V1 practices/V3 practiced/VP will_practice/VF
+ejerció exercise/V1 exercised/VP exercises/V3 will_exercise/VF practice/V1 practices/V3 practiced/VP will_practice/VF
 el the/ART
 elecciones election/N elections/NP vote/N votes/NP
 elementos elements/NP element/N
@@ -280,7 +280,7 @@ uranio uranium/N
 urgencia urgency/N emergency/N emergencies/NP
 vagando drifting/N wander/V1 wanders/V3
 valoraciones rating/N raitings/NP assessment/N assessments/NP
-vencidos defeated beaten losing overdue
+vencidos defeated/ADJ beaten/ADJ losing/ADJ overdue/ADJ
 ventana window/N windows/NP deadlight/N deadlights/NP
 ventas sale/N disposal/N sales/NP disposals/NP
 vez time/N times/NP turn/N turns/NP
