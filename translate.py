@@ -185,7 +185,7 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 	return newList
 						
 def rank_by_probability_and_discard_tail(list_of_likely_translations):
-	k = min(len(list_of_likely_translations), 5000)
+	k = min(len(list_of_likely_translations), 1000)
 	indices = random.sample(range(len(list_of_likely_translations)), k)
 	return [list_of_likely_translations[i] for i in sorted(indices)]
 
@@ -348,8 +348,8 @@ def main():
 			string = ' '.join(clean_lis)
 			list_of_likely_translations_as_strings.append(string)
 
-		best = LM.n_most_likely(list_of_likely_translations_as_strings, 1)
-		print "BEST", best[0]
+		best = LM.n_most_likely(list_of_likely_translations_as_strings, 10)
+		
 		#print list_of_likely_translations
 		##if idx==0:
 		#	print list_of_likely_translations
@@ -368,17 +368,16 @@ def main():
 			#print(word)
 			if word!='':
 				trans = dictionary.get(word)
-				demo_translation_list.append(trans[0])
+				demo_translation_list.append(trans[(idx+17)%(len(trans))-1])
 				
 		#print demo_translation_list
 		pos_free_translation_list = remove_pos_tags_and_underscores(demo_translation_list)
-		#print("Initial Translation: ",' '.join(pos_free_translation_list),)
+		print("Initial Translation: ",' '.join(pos_free_translation_list),)
 		
-		demo_translation_list= noun_adjective_switch(demo_translation_list)
-		demo_translation_list = noun_of_the_noun_switch(demo_translation_list)
 		
-		pos_free_translation_list = remove_pos_tags_and_underscores(demo_translation_list)
-		#print("Final Translation: ",' '.join(pos_free_translation_list),)
+	
+		print("Final Translation: ",best[0])
+		print "Top Ten: ",best
 
   
 
