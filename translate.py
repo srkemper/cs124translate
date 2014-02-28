@@ -261,14 +261,14 @@ def testLanguageModel():
 def main():
 	global LM 
 	
-	print "training language model"
+	# print "training language model"
 
-	trainingCorpus = HolbrookCorpus(brown.sents())
-	LM = LanguageModel(trainingCorpus)
+	# trainingCorpus = HolbrookCorpus(brown.sents())
+	# LM = LanguageModel(trainingCorpus)
 
-	print "training complete"
+	# print "training complete"
 
-	print "------------------"
+	# print "------------------"
 
 
 	#testLanguageModel()
