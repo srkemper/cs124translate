@@ -14,11 +14,9 @@ class LanguageModel:
     self.bigramCounts = collections.defaultdict(lambda: 0)
     self.unigramCounts = collections.defaultdict(lambda: 0)
     self.total = 0
-
     self.trilm = None
     self.bilm = None
     self.unilm = None
-
     self.train(corpus)
 
   def train(self, corpus):
@@ -39,11 +37,9 @@ class LanguageModel:
 
     train_tokens = brown.words()
     estimator = lambda fdist, bins: LidstoneProbDist(fdist, 0.2)
-
     self.trilm = NgramModel(3, train_tokens, True, False, estimator)
     self.bilm = NgramModel(2, train_tokens, True, False, estimator)
     self.unilm = NgramModel(1, train_tokens, True, False, estimator)
-
 
 
   def score(self, sentence):
@@ -55,16 +51,16 @@ class LanguageModel:
         tricount = self.trigramCounts[(first, prev, token)]
         #begin with trigram model
         if tricount > 0:
-            score += self.lm.prob(token, [prev + " " + first])
+            score += self.trilm.prob(token, [prev, first])
             # score += math.log(tricount)
             # score -= math.log(self.bigramCounts[(first, prev)])
             score -= self.bilm.prob(first,[prev])
             # continue
-
         #back off to bigram model
         biCount = self.bigramCounts[(prev, token)]
         if biCount > 0: 
-            score += math.log(biCount)
+            # score += math.log(biCount)
+            score += self.bilm.prob(token, [prev])
             score += math.log(self.STUPID_K)
             # score -= math.log(self.unigramCounts[prev])
             score -= self.unilm.prob(prev, [])
@@ -90,4 +86,4 @@ class LanguageModel:
     sents = []
     for tup in scores[:n]:
         sents.append(tup[0])
-    return sents[:n]
+    return sents
