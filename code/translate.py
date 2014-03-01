@@ -11,6 +11,8 @@ from LanguageModel import LanguageModel
 from nltk.corpus import brown
 from nltk.corpus import cess_esp
 from nltk import UnigramTagger, BigramTagger, TrigramTagger#, HiddenMarkovModelTagger
+from nltk.model import NgramModel
+from nltk.probability import LidstoneProbDist
 
 import nltk
 from nltk.corpus import cess_esp
@@ -80,7 +82,7 @@ def get_our_tags_from_nltk(tag):
 
 	return tags
 
-def get_translations_by_pos(word, dictionary):
+def get_translations_by_pos(word, dictionary, unigram_model):
 	word = word.replace('.','')
 	word = word.replace(',','')
 	word = word.replace(':','')
@@ -108,6 +110,9 @@ def get_translations_by_pos(word, dictionary):
 	# turn their tag into ours
 	tags = get_our_tags_from_nltk(source_tag)
 
+	# maximum = -500000
+	# best = None
+
 	results = []
 	for tag in tags:
 		if tag not in pos_dict:
@@ -119,6 +124,10 @@ def get_translations_by_pos(word, dictionary):
 		words = pos_dict[tag]
 		for word in words:
 			results.append(prefix + word + "/" + tag)
+			# prob = unigram_model.prob(word, [])
+			# if prob > maximum:
+				# best = prefix + word + "/" + tag
+				# maximum = prob
 
 	if len(results) == 0:
 		for trans in dictionary.get(source_word):
@@ -129,6 +138,7 @@ def get_translations_by_pos(word, dictionary):
 	# print tags
 	# print "results = "
 	#print results
+	# return [best]
 	return results
 
 def remove_pos_tags_and_underscores(translation_list):
@@ -144,7 +154,7 @@ def remove_pos_tags_and_underscores(translation_list):
 				final_list.append(tok)
 	return final_list
 
-def append_next_words(list_of_likely_translations,index,spanish_sentence_list,dictionary):
+def append_next_words(list_of_likely_translations,index,spanish_sentence_list,dictionary,unigram_model):
 	newList = []
 	word = spanish_sentence_list[index]
 		
@@ -158,7 +168,7 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 		
 	if word!='' and index==0:
 		#print index
-		translations = get_translations_by_pos(word, dictionary)
+		translations = get_translations_by_pos(word, dictionary, unigram_model)
 		#translations.append('')
 
 		#newList.append(translations)
@@ -166,7 +176,7 @@ def append_next_words(list_of_likely_translations,index,spanish_sentence_list,di
 			newList.append([trans])
 		#print "NEWLIST", newList
 	elif word!='':
-		translations = get_translations_by_pos(word, dictionary) 
+		translations = get_translations_by_pos(word, dictionary, unigram_model) 
 		#translations.append('')
 
 		for trans in translations:
@@ -192,11 +202,11 @@ def rank_by_probability_and_discard_tail(list_of_likely_translations):
 	return [list_of_likely_translations[i] for i in sorted(indices)]
 
 
-def likely_translations(spanish_sentence_list,dictionary):
+def likely_translations(spanish_sentence_list,dictionary, unigram_model):
 	list_of_likely_translations=[]
 	index=0
 	while index<len(spanish_sentence_list):
-		list_of_likely_translations =  append_next_words(list_of_likely_translations,index,spanish_sentence_list,dictionary)
+		list_of_likely_translations =  append_next_words(list_of_likely_translations,index,spanish_sentence_list,dictionary,unigram_model)
 		list_of_likely_translations = rank_by_probability_and_discard_tail(list_of_likely_translations)
 		index+=1
 	return list_of_likely_translations
@@ -297,6 +307,16 @@ def main():
 	sentences_lists = loadList(sentences_file)
 	tagged_sentences = loadList(tagged_corpus_file)
 	
+<<<<<<< HEAD:code/translate.py
+=======
+	print "training LM..."
+	trainingCorpus = HolbrookCorpus(brown.sents())
+	LM = LanguageModel(trainingCorpus)
+	estimator = lambda fdist, bins: LidstoneProbDist(fdist, 0.2)
+	# unigram_model = NgramModel(1, brown.words(), True, False, estimator)
+	unigram_model = None
+	print "finished training LM"
+>>>>>>> 4c85ede967eb470707c87536310a77c7469fe161:translate.py
 	#print sentences_lists
 	#print dictionary_lists
 	dictionary = dict()
@@ -356,9 +376,13 @@ def main():
 		demo_translation_list = []
 		list_of_likely_translations = []
 	
+<<<<<<< HEAD:code/translate.py
 		list_of_likely_translations= likely_translations(sentence_list,dictionary)
 		#print "list_of_likely_translations = "
 		#print list_of_likely_translations
+=======
+		list_of_likely_translations= likely_translations(sentence_list,dictionary,unigram_model)
+>>>>>>> 4c85ede967eb470707c87536310a77c7469fe161:translate.py
 		list_of_likely_translations_as_strings = []
 		for lis in list_of_likely_translations:
 			lis = noun_adjective_switch(lis)
@@ -396,11 +420,16 @@ def main():
 		
 		
 	
+<<<<<<< HEAD:code/translate.py
 		print "Top " + str(len(best)) + ":"
 		for i,s in enumerate(best):
 			print str(i) + ":" + s
 		print "Final Translation: " + best[0]
 		print "------------------"
+=======
+		print("Final Translation: ",best[0])
+		# print "Top Ten: ",best
+>>>>>>> 4c85ede967eb470707c87536310a77c7469fe161:translate.py
 
 
 
