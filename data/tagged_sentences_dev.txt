@@ -17,13 +17,3 @@ la/da0fs0 noticia/ncfs000 de/sps00 la/da0fs0 prueba/ncfs000 exitosa/aq0fs0 fue/v
 el/da0ms0 6/ncms000 de/sps00 agosto/W de/sps00 1945/W la/da0fs0 bomba/ncfs000 de/sps00 uranio/ncms000 little/aq0ms0 boy/cc muchachito/sn.e-SUJ fue/vsis3s0 lanzada/vmp00sf sobre/sps00 la/da0fs0 ciudad/ncfs000 de/sps00 hiroshima/da0fp0 japón/ncfp000
 
 la/da0fs0 represión/ncfs000 se/p0300000 ejerció/vmip3s0 en/sps00 muchos/di0mp0 ámbitos/ncmp000 no/rn sólo/p0000000 fueron/vmis3p0 las/da0fp0 ejecuciones/ncfp000 y/cc largas/aq0fp0 condenas/ncfp000 de/sps00 cárcel/np0000p se/p0300000 creó/vmip3s0 una/di0fs0 sociedad/ncfs000 donde/pr000000 los/da0mp0 vencidos/ncmp000 estaban/vmii3p0 excluidos/aq0mpp de/sps00 la/da0fs0 vida/ncfs000 política/spcms cultural/ncms000 intelectual/aq0cs0 y/cc social/aq0cs0
-
-las/da0fp0 quejas/ncfp000 sobre/sps00 las/da0fp0 habitaciones/ncfp000 de/sps00 hotel/ncms000 incompletas/aq0ms0 y/cc el/da0ms0 agua/ncfs000 del/spcms grifo/nccs000 amarilla/aq0fs0 rápidamente/pr0cn000 se/p0000000 convirtieron/vmip3s0 en/sps00 noticia/ncfs000 vieja/aq0fs0
-
-mundialmente/sps00 las/da0fp0 ventas/ncfp000 de/sps00 refrescos/ncmp000 disminuyeron/Fc mientras/cs los/da0mp0 consumidores/ncmp000 recurren/aq0mp0 al/spcms agua/ncfs000 bebidas/aq0fs0 de/sps00 frutas/np0000l y/cc otras/di0fp0 alternativas/ncfp000 más/aq0fp0 saludables/ncfp000
-
-lamentablemente/sn.e-SUJ nuestros/dp1mpp recursos/ncmp000 son/vsip3p0 finitos/aq0cp0 y/cc como/cs resultado/ncms000 el/da0ms0 eep/pr0cn000 debe/vmip3s0 priorizar/vmn0000 a/sps00 los/da0mp0 animales/ncmp000 que/pr0cn000 pueden/vmip3p0 contribuir/vmn0000 a/sps00 la/da0fs0 salud/ncfs000 genética/aq0fs0 en/sps00 general/aq0cs0 de/sps00 los/da0mp0 animales/ncmp000 que/pr0cn000 se/p0000000 encuentran/vmip3p0 en/sps00 cautiverio/da0fs0
-
-hay/vaip3s0 una/di0fs0 gran/aq0cs0 incertidumbre/ncfs000 en/sps00 la/da0fs0 nación/ncfs000 tras/sps00 los/da0mp0 eventos/ncmp000 de/sps00 las/da0fp0 últimas/ncfp000 24/aq0fp0 horas/ncfp000 el/da0ms0 voto/ncms000 del/spcms parlamento/ncms000 a/sps00 favor/ncms000 de/sps00 la/da0fs0 salida/ncfs000 de/sps00 yanukovych/vmn0000 la/da0fs0 liberación/ncfs000 de/sps00 su/dp3cs0 rival/nccs000 política/spcms yulia/np0000o tymoshenko/Fpt y/cc la/da0fs0 programación/ncfs000 de/sps00 nuevas/aq0fp0 elecciones/ncfp000 para/sps00 mayo/W
-
-pero/cc para/sps00 la/da0fs0 mayoría/ncfs000 de/sps00 personas/ncfp000 las/da0fp0 enfermedades/ncfp000 comunes/aq0cp0 y/cc los/da0mp0 rasgos/ncmp000 son/vsip3p0 el/da0ms0 resultado/ncms000 tanto/rg de/sps00 la/da0fs0 naturaleza/ncfs000 como/cs de/sps00 la/da0fs0 crianza/ncfs000 múltiples/sps00 genes/ncmp000 junto/aq0mpp con/sps00 diversos/di0mp0 factores/ncmp000 ambientales/aq0cp0 y/cc otros/di0mp0 elementos/ncmp000

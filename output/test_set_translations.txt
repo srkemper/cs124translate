@@ -1,0 +1,14 @@
+Baseline Translation: “the complaints about the rooms of hotel incomplete and the water of the tap yellow quickly self became in news old”
+System Translation: “the complaints on the sketchy hotel rooms and the yellow tap aqua rapidly self turns in old news”
+
+Baseline Translation: “globally them sales than refreshments will decrease as the consumers will appeal to the waters drinks than fruit and other alternative more healthy”
+System Translation: “globally them refreshments sales diminshes as the users drew on at the aqua fruit drinks and other most alternatives wholesome”
+
+Baseline Translation: “regrettably our resource were finite and like result the EEP should prioritize to the animals than can contribute to her health genetics in general of the animals than self find in captivity”
+System Translation: “lamentably our means is finite and as outcome the EEP debit prioritizes to the beasts that can contributed at the health genetics in general of the beasts that self finds in captivity”
+
+Baseline Translation: “there are a great uncertainties in the nation backside the events than the last 24 hours the vow of the Parliament to favor than the exit than Yanukovych the release than your foe politics Yulia Tymoshenko and the programming than new vote in order to May”
+System Translation: “there are an great doubt in the nation behind the events of them last 24 hours the parliament vow to favor of the exit from Yanukovych the release from its foe politic Yulia Tymoshenko and the programming from new votes to May”
+
+Baseline Translation: “but for it most of people them diseases common and the features is the result such of it characters will eat of it breeding multiple genes together with various factors environmental and others elements”
+System Translation: “only for the people most the common illnesses and the traits is the outcome how of the nature as of the manifold breeding together genes by various environmental factors and others elements”

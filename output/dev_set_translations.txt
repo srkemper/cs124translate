@@ -1,0 +1,30 @@
+Baseline Translation: “to him long of the platform an man laden with an old women suitcases walk the trains”
+Final Translation: “to the long of platforms a laden man by a old case walks the trains”
+
+Baseline Translation: “in order to no forgot that any turn were a husband that to little than rises go baptized in the belief Catholic with the forename than Faustino Saralegui and that today contemplated with peeper outside your last putting than sunshine face to a deadlight nude that gave to a small fleet”
+Final Translation: “for no forgot than any time were a husband that at few from rose was baptized in the Romish faith by the forename of Faustino Saralegui and that today contemplates by outside eyes your last sun setting front at an nude window what yield at a small park”
+
+Baseline Translation: “I nothingness know but will be able to imagine wanders from first time of it morning except course fixed by them streets cold of Manhattan unable of wait in home of your female friend to that get the time in that must go out of home search one taxi and got to the restaurant”
+Final Translation: “I not at all know but was able to imagines wander since first time of the morning out of fixed course for the cool roads from Manhattan unable of wait in home from thy lady at then get the time in that should goes out from home search a cab and will reach at the eatery”
+
+Baseline Translation: “unique then from her safety of the automobile in running you will set in her huge case red than hauled the kind that than self have left will scream speech incomprehensible as marked her case”
+Final Translation: “only now from the car safety on march you set in the huge ruddy case what hauled the that type that self has I stayed yelled inapprehensible words as marked the case”
+
+Baseline Sentence: "each time that I them communicated my advances that I believed important they annotates their observation about my states of encouragement."
+Final Translation: "every time that I them reports my progresses what I think significant them writes down it's remarks on my states of mind."
+
+Baseline Translation: "them first assessment obtained than them survey ocular practiced in it house discards will eat supposition that the burning self produces with cause than one flint tenterhook or embers projects from it smokestack."
+Final Translation: "the first obtained ratings of the ocular inspections practiced in the house will discard as suppositions than the fire self produces by cause of an spark ember or embers throws from the hearth."
+
+Baseline Translation: "the book are divided in sixth extensive chapters than tell an novel of her fresh narrative Hispanic the circles amorous existing among the three character main the doctor Juvenal Urbino Fermina Daza and Florentino Ariza."
+Final Translation: "the this book divided in six wide episodes what tells a story from the new Hispanic narrative the loving round existent among the three principal personages the doc Juvenal Urbino Fermina Daza and Florentino Ariza."
+
+Baseline Translation: “the news than the exam successful goes connected with urgency to the chairman Harry S Truman to who this information you can attended in order to fastened your position in the Conference Postsdam about the future than the Europe than the postwar period that early had space”
+Final Translation: “the news from the successful exam went inform with urgency to the president Harry S Truman to whom this data you could will serve for fasten his position in the Conference Postsdam on the future from the Europe of the postwar period that soon has space”
+
+Baseline Translation: “the 6 of august of 1945 it pump of uranium Little Boy boy will go launched envelope it city of Hiroshima Japan”
+Final Translation: “the 6 of august of 1945 the uranium pump Little Boy boy was launched on the city of Hiroshima Japan”
+
+Baseline Translation: “her repression self exercises in much scope no unique am them performances and long convictions than prison self creates an partnership wherein the losing am excludes than her lives politics cultural egghead and social”
+Final Translation: “the suppression oneself practices in many scopes no by oneself was the executions and long convictions from jails self makes a society where the overdue was excluded from the life cultured politic intellectual and social”
+

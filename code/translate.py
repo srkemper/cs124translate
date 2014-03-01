@@ -8,7 +8,6 @@ import pickle
 import nltk
 from HolbrookCorpus import HolbrookCorpus
 from LanguageModel import LanguageModel
-from LaplaceUnigramLanguageModel import LaplaceUnigramLanguageModel
 from nltk.corpus import brown
 from nltk.corpus import cess_esp
 from nltk import UnigramTagger, BigramTagger, TrigramTagger#, HiddenMarkovModelTagger
@@ -244,17 +243,6 @@ def loadList(file_name):
         l = [line.strip() for line in f]
     return l
 
-def testUniLanguageModel():
-	q = []
-	q.append("Catholic")
-	q.append("Ramish")
-	q.append("children")
-	q.append("pervert")
-	q.append("molest")
-
-	for w in q:
-		print str(ULM.score(w)) + w
-
 def testLanguageModel():
 	
 	q = []
@@ -280,7 +268,6 @@ def testLanguageModel():
 
 def main():
 	global LM 
-	global ULM
 
 	print "setting training corpus"
 	trainingCorpus = HolbrookCorpus(brown.sents())
@@ -288,27 +275,12 @@ def main():
 	print "training language models"
 	
 	LM = LanguageModel(trainingCorpus)
-	ULM = LaplaceUnigramLanguageModel(trainingCorpus)
 	
 	print "training complete"
 	print "------------------"
 
-	# print "training language model"
 
-	# trainingCorpus = HolbrookCorpus(brown.sents())
-	# LM = LanguageModel(trainingCorpus)
-
-	# print "training complete"
-
-	# print "------------------"
-
-
-
-
-	testLanguageModel()
-	testUniLanguageModel()
-
-	return
+	#testLanguageModel()
 
 	#tagged_corpus = cess_esp.tagged_sents()
 	#size = int(len(tagged_corpus) * .9)
@@ -318,9 +290,9 @@ def main():
 	#hmm_tagger = HiddenMarkovModelTagger.train(training)
 	#print "finished training"
 
-	dict_file = "./data/dictionary.txt"
-	sentences_file = "./data/corpus.txt"
-	tagged_corpus_file = "./data/tagged_sentences.txt"
+	dict_file = "../data/dictionary.txt"
+	sentences_file = "../corpus/corpus_dev.txt"
+	tagged_corpus_file = "../data/tagged_sentences_dev.txt"
 	dictionary_lists = loadList(dict_file)
 	sentences_lists = loadList(sentences_file)
 	tagged_sentences = loadList(tagged_corpus_file)
